@@ -16,8 +16,4 @@ public class Checkout {
         clientes.add(cliente);
         System.out.println("cliente añadido satisfactoriamente");
     }
-
-    
-
-
 }
