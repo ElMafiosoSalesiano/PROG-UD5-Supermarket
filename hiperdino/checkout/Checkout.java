@@ -39,4 +39,15 @@ public class Checkout {
 
     }
 
+    public static void closeCheckout(){
+        if (clients.isEmpty()) {
+            System.out.println("Caja cerrada");
+            System.out.println("gracias por confiar en nuestra tienda, vuelva pronto.");
+            System.out.println("Fin del programa");
+        }
+        else{
+            System.out.println("No puede cerrar la caja, hay clientes esperando");
+        }
+    }
+
 }
