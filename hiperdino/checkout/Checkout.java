@@ -8,12 +8,36 @@ import hiperdino.people.People;
 import hiperdino.products.Products;
 
 public class Checkout {
-    private static Queue<Client> clientes = new LinkedList<>();
+    private static Queue<Client> clients = new LinkedList<>();
     private int checkout = 1;
     
     public static void addClient(){
         Client cliente = new Client(Products.randomBuyList(), People.people());
-        clientes.add(cliente);
+        clients.add(cliente);
         System.out.println("cliente añadido satisfactoriamente");
+    }
+
+    public static void serveCustomer(){
+        if (clients.isEmpty()) {
+            System.out.println("No hay clientes esperando para ser atendidos");
+        }
+        else{
+            clients.poll();
+            System.out.println("Cliente atendido con éxito");
+        }
+    }
+
+    public static void showClients(){
+        if (clients != null) {
+            System.out.println("quedan por atender: ");
+            
+            for (Client client : clients) {
+                System.out.println(client.getName());
+            }
+        }
+        else{
+            System.out.println("No hay clientes sin atender para poder mostrar");
+        }
+
     }
 }
