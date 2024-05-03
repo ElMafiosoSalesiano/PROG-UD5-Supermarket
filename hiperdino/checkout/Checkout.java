@@ -22,7 +22,7 @@ public class Checkout {
             System.out.println("No hay clientes esperando para ser atendidos");
         } else {
             clients.poll();
-            System.out.println("Cliente atendido con éxito");
+            System.out.println("Cliente" + Client.getName() + "atendido con éxito");
         }
     }
 
@@ -38,5 +38,5 @@ public class Checkout {
         }
 
     }
-    
+
 }
