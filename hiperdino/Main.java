@@ -2,6 +2,8 @@ package hiperdino;
 
 import java.util.Scanner;
 
+import hiperdino.checkout.Checkout;
+
 public class Main {
     public static void main(String[] args) {
         final Scanner SCANNER = new Scanner(System.in);
@@ -45,7 +47,7 @@ public class Main {
                     break;
                 case 2:
                     if (checkOut) {
-                        
+                        Checkout.addClient();
                     }
                     else{
                         System.out.println("La caja no está abierta por lo tanto no es posible añadir clientes");
@@ -53,7 +55,7 @@ public class Main {
                     break;
                 case 3:
                     if (checkOut) {
-                        
+                        Checkout.serveCustomer();
                     }
                     else{
                         System.out.println("La caja no está abierta por lo tanto no es posible atender cliente");
@@ -61,7 +63,7 @@ public class Main {
                     break;
                 case 4:
                     if (checkOut) {
-                        
+                        Checkout.showClients();
                     }
                     else{
                         System.out.println("No está la caja abierta por lo que no hay clientes pendientes");
