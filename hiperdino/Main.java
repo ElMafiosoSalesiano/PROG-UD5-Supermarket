@@ -71,9 +71,16 @@ public class Main {
                     }
                     break;
                 case 5:
-                    openedProgram = false;
-                    System.out.println("gracias por confiar en nuestra tienda, vuelva pronto.");
-                    System.out.println("Fin del programa");
+                    if (Client.getName().isEmpty()) {
+                        System.out.println("Caja cerrada");
+                        openedProgram = false;
+                        checkOut = false;
+                        System.out.println("gracias por confiar en nuestra tienda, vuelva pronto.");
+                        System.out.println("Fin del programa");
+                    }
+                    else{
+                        System.out.println("No puede cerrar la caja, hay clientes esperando");
+                    }
                     break;
                 default:
                     System.out.println("no has escogido ninguna opción");
