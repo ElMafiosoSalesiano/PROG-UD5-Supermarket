@@ -25,14 +25,15 @@ public class Products {
         return productsReturn;
     }
 
-    public static void randomAmount(){
-        Stack <String> randomAmount = new Stack<>();
+    public static Stack<String> randomBuyList(){
+        Stack<String> randomAmount = new Stack<>();
         int randomAmountProducts  = (int) (Math.random() * (10 - 1)+1);
         for (int i = 0; i < randomAmountProducts; i++) {
             randomAmount.add(Products.products());
         }
         for (int i = 0; i < randomAmountProducts; i++) {
-            System.out.println(randomAmount.get(i));
+            randomAmount.get(i);
         }
+        return randomAmount;
     }
 }
