@@ -20,14 +20,14 @@ public class Products {
         products.add("Jamon De York Marca El Pozo");
         String productsReturn;
         int randomIndex = (int) (Math.random() * 10);
-        
+
         productsReturn = products.get(randomIndex);
         return productsReturn;
     }
 
-    public static Stack<String> randomBuyList(){
+    public static Stack<String> randomBuyList() {
         Stack<String> randomAmount = new Stack<>();
-        int randomAmountProducts  = (int) (Math.random() * (10 - 1)+1);
+        int randomAmountProducts = (int) (Math.random() * (10 - 1) + 1);
         for (int i = 0; i < randomAmountProducts; i++) {
             randomAmount.add(Products.products());
         }

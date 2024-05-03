@@ -6,30 +6,43 @@ import hiperdino.people.People;
 import hiperdino.products.Products;
 
 public class Client {
-    private Stack<String> randomBuyList = Products.randomBuyList();
-    private String name = People.people();
+    private static Stack<String> randomBuyList = Products.randomBuyList();
+    private static String name = People.people();
 
     public Client(Stack<String> randomBuyList, String name) {
-        this.randomBuyList = randomBuyList;
-        this.name = name;
+        Client.randomBuyList = randomBuyList;
+        Client.name = name;
     }
 
-    public Stack<String> getRandomBuyList() {
+    public static Stack<String> getRandomBuyList() {
         return randomBuyList;
     }
 
     public void setRandomBuyList(Stack<String> randomBuyList) {
-        this.randomBuyList = randomBuyList;
+        Client.randomBuyList = randomBuyList;
     }
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Client.name = name;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Client [randomBuyList=" + randomBuyList + ", name=" + name + ", getRandomBuyList()="
+                + getRandomBuyList() + ", getName()=" + getName() + ", getClass()=" + getClass() + ", toString()="
+                + super.toString() + "]";
+    }
+
+    public static String clientMenu() {
+        String menu = "Nombre del cliente: " + Client.getName() +
+                "\nNúmero total de productos " + Client.getRandomBuyList().size() +
+                "\nLista de artículos de la cesta\n " +
+                Client.getRandomBuyList();
+        return menu;
+    }
 
 }
